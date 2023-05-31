@@ -40,15 +40,15 @@ import { DeploymentStatusEnum, ProjectStateEnum } from "@spheron/core";
           describe: "Upload protocol",
           choices: ["arweave", "filecoin", "ipfs"],
         })
-        .option("project", {
-          describe: "Project name",
+        .option("bucket", {
+          describe: "Bucket name",
         })
         .option("organization", {
           describe: "Organization where project will be created",
         })
         .version(false)
         .usage(
-          `Usage: $0 upload --path <file_path> --protocol [arweave| filecoin| ipfs] [--project <project_name>] [--organization <organizationId>]`
+          `Usage: $0 upload --path <file_path> --protocol [arweave| filecoin| ipfs] [--bucket <bucket_name>] [--organization <organizationId>]`
         )
         .wrap(100)
         .help();
@@ -89,8 +89,8 @@ import { DeploymentStatusEnum, ProjectStateEnum } from "@spheron/core";
       Examples:
         - get organization            : options: --id 
         - get organizations           : (all organization for your user will be returned)
-        - get deployment              : options: --id, --skip (optional), --limit (optional), --status (optional)
-        - get deployments             : options: --projectId  
+        - get deployment              : options: --id
+        - get deployments             : options: --projectId, --skip (optional), --limit (optional), --status (optional)  
         - get project                 : options: --id
         - get projects                : options: --organizationId (optional), --skip (optional), --limit (optional), --state (optional)
         - get domains                 : options: --projectId
